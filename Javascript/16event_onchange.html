@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #res {
+            width: 350px; height: auto; border: 2px solid red;padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="state" onchange="disp(this.value)">
+        <option>select state</option>
+        <option>select AP</option>
+        <option>select UP</option>
+        <option>select TS</option>
+    </select>
+    <div id="res"></div>
+    <script>
+        function disp(val){
+            // var name = document.getElementById("state").value;
+           if(val == 'select AP'){
+               document.getElementById("res").innerHTML = "<h2>AP State:</h2><p>Andhra Pradesh is a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Vishnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing.</p>";
+           }
+           else if(val == 'select UP'){
+               document.getElementById("res").innerHTML = "<h2>UP State:</h2><p>Uttar Pradesh is a state in northern India. Its city of Agra is home to the iconic Taj Mahal monument, a colossal, domed, white-marble mausoleum honouring the wife of 17th-century Mughal emperor Shah Jahan. Nearby are the red-brick walls of Agra Fort, a fortified palace dating to the 16th and 17th centuries. Capital Lucknow has Muslim memorial shrines Bara Imambara and calligraphy-adorned Chota Imambara.</p>";
+           }
+           else if(val == 'select TS'){
+               document.getElementById("res").innerHTML = "<h2>Telangana State:</h2><p>Telangana is a state in southern India. In the capital of Hyderabad, the Charminar is a 16th-century mosque with 4 arches supporting 4 towering minarets. The monument overlooks the city's long-running Laad Bazaar. Once the seat of the Qutb Shahi dynasty, the sprawling Golconda Fort is a former diamond-trading center. In the city of Warangal, the centuries-old Warangal Fort features carved stone towers and gateways.</p>";
+           }
+           else{
+            document.getElementById("res").innerHTML = "Please select any state";
+           }
+        }
+    </script>
+</body>
+</html>

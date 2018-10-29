@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+   <style>
+       input{
+           width: 80px; height: 35px;background: red; color: white;font-size: 30px;
+       }
+   </style>
+</head>
+<body>
+    <input type="submit" value="-" id="hide">
+    <input type="submit" value="+" id="show" style="display: none;">
+    <div style="width: 300px; height: 200px; background: orange;" id="box" ></div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+           $("#hide").click(function(){
+               $("#box").fadeOut(2000);
+               $("#hide").hide();
+               $("#show").show();
+
+           })
+
+           $("#show").click(function(){
+               $("#box").fadeIn(2000)
+               $("#hide").show();
+               $("#show").hide();
+               $("#box").html("<h2>Welcome to my site</h2><p>For help when upgrading jQuery, please see the upgrade guide most relevant to your version. We also recommend using the jQuery Migrate pluginDownload the compressed, production jQuery 3.3.1Download the uncompressed, development jQuery 3.3.1Download the map file for jQuery 3.3.1 </p>");
+           })
+        });
+
+        
+
+    </script>
+</body>
+</html>

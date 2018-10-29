@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="val">
+    <input type="submit" value="submit" onclick="disp()">
+    <div id="res"></div>
+    <script>
+        function disp(){
+            var val = document.getElementById("val").value;
+            var i = 1;
+            var data = '';
+            do{
+                data +=  val+" * "+i+" = "+val*i+"<br>";
+                // x = x + y => x += y
+                i++;
+            }while(i <= 10)
+            document.getElementById("res").innerHTML = data;
+        }        
+    </script>
+</body>
+</html>

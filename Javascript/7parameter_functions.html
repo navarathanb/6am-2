@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="submit" value="submit" onclick="disp('2',5,78)">
+    <script>
+        function disp(a,b,c){
+            var val1 = a;  
+            var val2 = b;  
+            var val3 = c;  
+            if(parseInt(val1) > parseInt(val2) && parseInt(val1) > parseInt(val3)){
+                alert(val1+" is greater")
+            }  
+            else if(parseInt(val2) > parseInt(val3) && parseInt(val2) > parseInt(val1)){
+                alert(val2 +" is greater")
+            }
+            else{
+                alert(val3+" is greater");
+            }
+        }
+       
+
+    </script>
+</body>
+</html>
