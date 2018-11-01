@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" onkeyup="this.value = this.value.toUpperCase()">
+    <script>
+        var str = "This i   s my laptop     ";
+        var str2 = new String("This is my laptop");
+        
+        document.write("<br>"+typeof(str)+"<br>")
+        document.write(typeof(str2)+"<br>");
+
+        document.write("Strign length : "+str.length+"<br>");
+        document.write("String substring index : "+str.indexOf("laptop")+"<br>");
+        document.write("String substring -slice : "+str.slice(2,10)+"<br>");// first index, last index-1
+        document.write("String substring -slice : "+str.slice(2)+"<br>");// first index
+        document.write("String substring -slice : "+str.slice(-2)+"<br>");// first index
+        document.write("String substring -slice : "+str.slice(-6,-2)+"<br>");// first index
+        document.write("String substring -substring : "+str.substring(2,10)+"<br>");// first index
+        document.write("String lowercase : "+str.toLowerCase()+"<br>");// first index
+        document.write("String uppercase : "+str.toUpperCase()+"<br>");// first index
+        var arr = str.split(" ");//to convert string to array
+        document.write("array  : "+arr+"<br>");//
+        document.write("array index1  : "+arr[1]+"<br>");//
+        var arr2 = str.split("");
+        document.write("array  : "+arr2+"<br>");// 
+        document.write("replace: "+str.replace("laptop","Pen")+"<br>");
+        document.write("charAt :"+ str.charAt(2)+"<br>");
+        document.write("Concat: "+str.concat(" ","Welcome to my page ")+"<br>")
+        document.write("endswidth : "+ str.endsWith("laptop")+"<br>");
+        document.write("endswidth : "+ str.startsWith("laptop")+"<br>");
+        document.write("to string: "+ str.toString()+"<br>")
+
+        if(str.endsWith("laptop")){
+            document.write(str.concat(" : String extended"));
+        }
+        else{
+
+        }
+        document.write("Trim: "+str.trim())
+
+    </script>
+</body>
+</html>
