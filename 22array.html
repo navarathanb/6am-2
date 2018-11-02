@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = new Array("string","james","kims","vimal");
+        var arr = ["string","james","kims","vimal"];
+        document.write("ARray: "+arr+"<br>");
+        document.write("Arrya Length: "+arr.length+"<br>");
+        for(i=0; i<arr.length;i++){
+            document.write(arr[i]+"<br>")
+        }
+        // join() :  to convert array to string
+        var str = arr.join(" ");
+        document.write("String: "+str+"<br>")
+        document.write("String lenght: "+str.length+"<br>");
+        //push() : insert at last position
+        arr.push("test-1");
+        document.write("array -push :"+arr+"<br>");
+        //unshift() :: insert at first position
+        arr.unshift("test-2");
+        document.write("array - unshift :"+arr+"<br>");
+        //pop() : to delete record at last position
+        arr.pop();
+        document.write("array-pop :"+arr+"<br>");
+        
+        //shift() : to delete record at first position
+        arr.shift();
+        document.write("array-shift :"+arr+"<br>");
+        
+        //splice(position, count of deleted values, value to insert)
+        arr.splice(0, 3, "test-3","kishore");
+        document.write("array - splice :"+arr+"<br>");
+        document.write("array - sort :"+arr.sort()+"<br>");
+        document.write("array - reverse :"+arr.reverse()+"<br>");
+        
+        
+    </script>
+</body>
+</html>
