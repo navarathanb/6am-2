@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <div id="inp">
+        Name : <input type="text" id="name">
+        <br>
+        Role : <input type="text" id="role">
+        <br>
+        doj : <input type="date" id="date">
+        <br>
+        <input type="submit" value="submit" onclick="disp()">
+   </div>
+    <div id="res"></div>
+    <script>
+        function disp(){
+            var name = document.getElementById("name").value;
+            var role = document.getElementById("role").value;
+            var date = document.getElementById("date").value;
+
+            var data1 = " Dear mr/ms. XXX <br>";
+            var data2 = "We are from Srashaa Pvt Ltd. and we are pleased to offer you a position of YYY.<br>";
+            var data3 = "Your date of joining would be ZZZ. You need to submit all your documents on the firs day of joining.";
+            
+            var res = data1.replace("XXX", name) + data2.replace("YYY", role)+ data3.replace("ZZZ",date)+"<br> <input type='submit' id='btn' value='print' onclick= 'printLetter()'>";
+            document.getElementById("res").innerHTML = res;
+
+
+        }
+
+        function printLetter(){
+            document.getElementById("inp").style.display = 'none';
+            document.getElementById("btn").style.display = 'none';
+            window.print();
+        }
+    </script>
+</body>
+</html>

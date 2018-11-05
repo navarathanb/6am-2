@@ -10,6 +10,7 @@
     <script>
         var arr = new Array("string","james","kims","vimal");
         var arr = ["string","james","kims","vimal"];
+        document.write("indexOf :"+ arr.indexOf("james"))
         document.write("ARray: "+arr+"<br>");
         document.write("Arrya Length: "+arr.length+"<br>");
         for(i=0; i<arr.length;i++){
@@ -36,7 +37,10 @@
         //splice(position, count of deleted values, value to insert)
         arr.splice(0, 3, "test-3","kishore");
         document.write("array - splice :"+arr+"<br>");
+        document.write("array - sort :"+arr.sort()+"<br>");
+        document.write("array - reverse :"+arr.reverse()+"<br>");
 
+        
         
     </script>
 </body>

@@ -9,9 +9,10 @@
 </head>
 
 <body>
+    <input type="hidden" id="id">
     <input type="text" id="name">
-    <input type="submit" value="submit" onclick="insert()">
-    <input type="submit" value="update" onclick="update()">
+    <input type="submit" value="submit" onclick="insert()" id="ins">
+    <input type="submit" value="update" onclick="update()" id="upd" style="display:none;">
     <div id="res">
 
     </div>
@@ -32,6 +33,7 @@
             data += "<table border='1' cellpadding='10' cellspacing='0' width='200'><tr><td>Edit</td><td>ID</td><td>Name</td><td><input type='submit' value='x'></td></tr>";
             for (i = 0; i < arr.length; i++) {
                 debugger;
+                // var a = i+','+arr[i];
                 data += "<tr><td><input type='submit' value='+' onclick='edit("+i+")'></td><td>"+i+"</td><td>" + arr[i] + "</td><td><input type='submit' value='x'     onclick='del("+i+")'></td></tr>";
             }
             data += "</table>";
@@ -42,11 +44,30 @@
         //delete the record
         function del(i){
             // alert(i);
-            arr.splice(i,1);
+            arr.splice(i,1,);
             disp(arr);
         }
 
-        //
+        //edit
+        function edit(id){
+            alert(id)
+            document.getElementById("id").value = id;
+           document.getElementById("name").value = arr[id];
+           document.getElementById("upd").style.display = '';
+           document.getElementById("ins").style.display = 'none';
+        }
+
+        function update(){
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            arr.splice(id,1,name);
+            document.getElementById("upd").style.display = 'none';
+           document.getElementById("ins").style.display = '';
+            disp(arr);
+
+        }
+
+        //update()
     </script>
 </body>
 

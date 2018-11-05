@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="width: 300px; height: 200px; background: orange;" onmouseover="stop()"></div>
+    <script>
+        function disp(){
+            document.getElementById("box").style.background = 'red';
+            document.getElementById("box").style.height = '400px';
+            document.getElementById("box").innerHTML = "	Your computer's time zone doesn't appear to match your account setting for (GMT-08:00) Pacific Time (US and Canada); Tijuana. If you want to change this, update your account.Your computer's time zone doesn't appear to match your account setting for (GMT-08:00) Pacific Time (US and Canada); Tijuana. If you want to change this, update your account. Your computer's time zone doesn't appear to match your account setting for (GMT-08:00) Pacific Time (US and Canada); Tijuana. If you want to change this, update your account.";
+        }
+        var stopLogic = setTimeout("disp()", 5000);
+        function stop(){
+            clearTimeout(stopLogic);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 1000px; height: 400px; background: gray;
+            margin: 0px auto;
+        }
+        #box img {
+            width: 1000px; height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onmouseover="stop()" onmouseout="start()">
+        <img src="img/s1.jpg" alt="" name="image">
+    </div>
+    <script>
+        var i=0;
+        var arr = ["img/s1.jpg", "img/s2.jpg", "img/s3.jpg", "img/s4.jpg", "img/s5.jpg", "img/s6.jpg"];
+        function disp(){
+            document.image.src = arr[i];
+            i++;
+            if(i>=arr.length){
+                i=0;
+            }
+        }
+        var startLogic = setInterval("disp()",2000);
+        function stop()
+        {
+            clearInterval(startLogic);
+            //it will stop only setInterval execution.
+        }
+
+        function start(){
+          startLogic =  setInterval("disp()",2000);
+        }
+
+    </script>
+</body>
+</html>

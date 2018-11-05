@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input[type='text']{
+            width: 130px;height: 30px;
+        }
+        .btn {
+            width: 30px;height:30px; margin-top: 3px;
+        }
+        #box {
+            width: 133px; height: auto; margin:0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+            <input type="text" id="val">
+            <br>
+            <input type="submit" value="1" onclick="disp(1)"  class="btn">
+            <input type="submit" value="2" onclick="disp(2)"  class="btn">
+            <input type="submit" value="3" onclick="disp(3)"  class="btn">
+            <input type="submit" value="+" onclick="disp('+')"  class="btn">
+            <br>
+            <input type="submit" value="4" onclick="disp(4)"  class="btn">
+            <input type="submit" value="5" onclick="disp(5)"  class="btn">
+            <input type="submit" value="6" onclick="disp(6)"  class="btn">
+            <input type="submit" value="-" onclick="disp('-')"  class="btn">
+            <br>
+            <input type="submit" value="7" onclick="disp(7)"  class="btn">
+            <input type="submit" value="8" onclick="disp(8)"  class="btn">
+            <input type="submit" value="9" onclick="disp(9)"  class="btn">
+            <input type="submit" value="/" onclick="disp('/')"  class="btn">
+            <br>
+            <input type="submit" value="0" onclick="disp(0)"  class="btn">
+            <input type="submit" value="c" onclick="clr('c')"  class="btn">
+            <input type="submit" value="=" onclick="disp('=')"  class="btn">
+            <input type="submit" value="*" onclick="disp('*')"  class="btn">
+            <br>
+
+            <input type="submit" value="X" onclick="window.close()"  class="btn">
+    </div>
+    <script>
+        function disp(val){
+            if(val != '='){
+                document.getElementById("val").value += val;
+            }
+            else{
+                document.getElementById("val").value = eval( document.getElementById("val").value);
+            }
+        }
+        function clr(){
+            document.getElementById("val").value = '';
+        }
+        
+    </script>
+</body>
+</html>

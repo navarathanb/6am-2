@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+       var h = 'X';
+       var m = 'Y';
+       var s = 'Z';
+        var i=0;
+        var j=0;
+        var k=0;
+        function disp(){
+            
+            if(k > 59){
+                k = 0;
+                j++;
+            }
+            if(j>59){
+                i++;
+                j = 0;
+            }
+
+            var res = h.replace('X',i)+" - "+m.replace('Y',j)+" - "+s.replace('Z',k);
+            k++;
+            if(res == '0 - 0 - 5'){
+                clearInterval(opt);
+         var win =       window.open("","","width = 500,height = 200, left=  400");
+         win.document.write("Your time is over");
+            }
+            document.getElementById("res").innerHTML =  res;
+        }
+        var opt = setInterval("disp()",1000);
+
+    </script>
+</body>
+</html>

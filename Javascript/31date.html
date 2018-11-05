@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date();
+        document.write(date+"<br>");
+        document.write("Year :"+date.getFullYear()+"<br>");
+        document.write("Day :"+date.getDay()+"<br>");//0-6
+        switch(date.getDay()){
+            case 0:
+            document.write("Day is Sunday<br>");
+            break;
+            case 1:
+            document.write("Day is Monday<br>");
+            break;
+        }
+        document.write("Date :"+date.getDate()+"<br>");
+        var month = date.getMonth()+1;
+        document.write("MOnth :"+month+"<br>");//0-11
+        document.write("hours :"+date.getHours()+"<br>");//0-23
+        document.write("minutes :"+date.getMinutes()+"<br>");//0-59
+        document.write("seconds :"+date.getSeconds()+"<br>");//0-59
+        document.write("Time :"+date.getTime()+"<br>");//1957jan1st
+        
+
+
+
+        // var d = 32423;
+        // var str = d.toString();// converting numeric to string
+        // var str2 = d+'';
+    </script>
+</body>
+</html>
