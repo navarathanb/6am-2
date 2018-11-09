@@ -34,7 +34,7 @@
             for (i = 0; i < arr.length; i++) {
                 debugger;
                 // var a = i+','+arr[i];
-                data += "<tr><td><input type='submit' value='+' onclick='edit("+i+")'></td><td>"+i+"</td><td>" + arr[i] + "</td><td><input type='submit' value='x'     onclick='del("+i+")'></td></tr>";
+                data += "<tr></td><td><input type='submit' value='+' onclick='edit("+i+")'></td><td>"+i+"</td><td>" + arr[i] + "</td><td><input type='submit' value='x'     onclick='del("+i+")'></td></tr>";
             }
             data += "</table>";
             document.getElementById("res").innerHTML = data;

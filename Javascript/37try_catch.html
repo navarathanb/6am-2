@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Name : <input type="text" id="name">
+    <br><br>
+    <input type="submit" value="submit" onclick="disp()">
+    <script>
+        function disp(){
+            try{
+                debugger;
+                var name = document.getElementById("name").value;
+                document.getElementById("name").value = "Name : "+name;
+            }
+            catch(e){
+                alert(e.message);
+            }
+        }    
+
+    </script>
+</body>
+</html>
