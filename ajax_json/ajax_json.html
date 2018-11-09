@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        // debugger;
+        var obj, students;
+        if(window.XMLHttpRequest){ // excepr ie 5 and 6
+            obj = new XMLHttpRequest();
+        }    
+        else{ //ie 5 and 6
+            obj = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        obj.onreadystatechange = function(){
+            if(obj.readyState == 4  && obj.status == 200){
+                /*
+                readyState = 1 => if we requested ext data.
+                           = 2 => if request is taken
+                           = 3 => if server is extablished
+                           = 4 => if response will come
+                status = 404, 401, 200
+
+                */
+               students = JSON.parse(obj.responseText);
+               disp(students)
+            }
+        }
+
+        obj.open("get","extJson.txt",true); //true : asynchronous, false: synchronous.
+        obj.send();
+        
+
+        function disp(students){
+            var res = '';
+            for(i=0;i<students.length;i++){
+            res += students[i].name+", "+students[i].email+" , "+students[i].mobile+" , "+students[i].id+"<br>";
+            }
+            document.getElementById("res").innerHTML = res;
+        }
+    </script>
+</body>
+</html>

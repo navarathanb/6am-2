@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var student = new Array("james","vimal","kishore");
+        // var student = ["james","vimal","kishore"];
+         //json: javascript object notation.
+        var student = {"name":"james","email":"james@gmail.com","mobile":4234234,"id":100};
+        document.write("Studnet Name : "+student.name);
+        // document.write("Studnet Name : "+student.length);
+        var students = [{"name":"james","email":"james@gmail.com","mobile":4234234,"id":100},{"name":"james","email":"james@gmail.com","mobile":4234234,"id":100},{"name":"james","email":"james@gmail.com","mobile":4234234,"id":100},{"name":"james","email":"james@gmail.com","mobile":4234234,"id":100}];
+        document.write(students+"<br>");
+        document.write(students[0].name);
+        var res = "";
+        for(i=0;i<students.length;i++){
+            res += students[i].name+", "+students[i].email+" , "+students[i].mobile+" , "+students[i].id+"<br>";
+        }
+        document.write(res);
+    </script>
+</body>
+</html>

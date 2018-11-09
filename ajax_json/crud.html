@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 600px; height: auto; padding: 10px; border: 1px solid gray;
+            float: left;
+        }
+        .box2 {
+            width: 400px; height: auto; padding: 10px; border: 1px solid orange;float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" id="box1">
+
+    </div>
+    <div class="box2">
+        <table>
+            <tr><td>Id</td><td><input type='text' id='id'></td></tr>
+            <tr><td>Name</td><td><input type='text' id='name'></td></tr>
+            <tr><td>Email</td><td><input type='text' id='email'></td></tr>
+            <tr><td>Mobile</td><td><input type='text' id='mobile'></td></tr>
+            <tr><td></td><td><input type='submit' id='insert' value='insert' onclick="insert()" ><input type='submit' id='update' value='update' onclick="update()" style="display:none;"></td></tr>
+            
+        </table>
+    </div>
+    <script>
+        var students;
+        function getData(){
+            var obj;
+            if(window.XMLHttpRequest){ // excepr ie 5 and 6
+                obj = new XMLHttpRequest();
+            }    
+            else{ //ie 5 and 6
+                obj = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            obj.onreadystatechange = function(){
+                if(obj.readyState == 4  && obj.status == 200){
+                students = JSON.parse(obj.responseText);
+                getDisp(students);
+                }
+            }
+
+            obj.open("get","extJson.txt",true); //true : asynchronous, false: synchronous.
+            obj.send();
+        }
+       
+
+        function getDisp(students){
+            var table = "<table border='1' cellpadding='10' cellspacing='0' width='100%'><tr><td>edit<td>Id</td><td>Name</td><td>Email</td><td>Mobile</td><td>Update</td></tr>";
+            for(i=0;i<students.length;i++){
+                table += "<tr><td><input type='submit' value='+' onclick='edit()'><td>"+students[i].id+"</td><td>"+students[i].name+"</td><td>"+students[i].email+"</td><td>"+students[i].mobile+"</td><td><input type='submit' value='x' onclick='del()'></tr>";
+            }
+            table += "</table>";
+            document.getElementById("box1").innerHTML = table;
+        }
+        getData();
+
+        function insert(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var id = document.getElementById("id").value;
+
+            students.push({"name":name,"email":email,"mobile":mobile,"id":id});
+            getDisp(students);
+
+
+        }
+    </script>
+</body>
+</html>
