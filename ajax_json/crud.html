@@ -54,7 +54,7 @@
         function getDisp(students){
             var table = "<table border='1' cellpadding='10' cellspacing='0' width='100%'><tr><td>edit<td>Id</td><td>Name</td><td>Email</td><td>Mobile</td><td>Update</td></tr>";
             for(i=0;i<students.length;i++){
-                table += "<tr><td><input type='submit' value='+' onclick='edit()'><td>"+students[i].id+"</td><td>"+students[i].name+"</td><td>"+students[i].email+"</td><td>"+students[i].mobile+"</td><td><input type='submit' value='x' onclick='del()'></tr>";
+                table += "<tr><td><input type='submit' value='+' onclick='edit("+i+")'><td>"+students[i].id+"</td><td>"+students[i].name+"</td><td>"+students[i].email+"</td><td>"+students[i].mobile+"</td><td><input type='submit' value='x' onclick='del()'></tr>";
             }
             table += "</table>";
             document.getElementById("box1").innerHTML = table;
@@ -66,9 +66,56 @@
             var email = document.getElementById("email").value;
             var mobile = document.getElementById("mobile").value;
             var id = document.getElementById("id").value;
+            var k = 0;
+            for(i=0;i<students.length;i++){
+                if(students[i].id == id){
+                   alert("please enter uniq id");
+                   document.getElementById("id").focus();
+                   k = 1;
+                }
+                
+            }
+            
+            if(k==0){
+                students.push({"name":name,"email":email,"mobile":mobile,"id":id});
+                 getDisp(students);
+            }
 
-            students.push({"name":name,"email":email,"mobile":mobile,"id":id});
-            getDisp(students);
+
+        }
+
+        function edit(i){
+            // alert(i)
+            document.getElementById("id").value = students[i].id;
+            document.getElementById("name").value = students[i].name;
+            document.getElementById("email").value = students[i].email;
+            document.getElementById("mobile").value = students[i].mobile;
+            document.getElementById("id").disabled = true;
+            document.getElementById("insert").style.display = 'none';
+            document.getElementById("update").style.display = '';
+        }
+
+        function update(){
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            // alert(id)
+            for(i=0;i<students.length;i++){
+                if(students[i].id == id){
+                    students.splice(i,1,{"name":name,"email":email,"mobile":mobile,"id":id});
+                    getDisp(students);
+
+                    document.getElementById("id").value = '';
+                    document.getElementById("name").value = '';
+                    document.getElementById("email").value = '';
+                    document.getElementById("mobile").value = '';
+                    document.getElementById("id").disabled = false;
+                    document.getElementById("insert").style.display = '';
+                    document.getElementById("update").style.display = 'none';
+
+                }
+            }
 
 
         }
