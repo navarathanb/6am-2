@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1,#box2, #box3, #box4,#box5, #box6 {
+            width: 20px; height: 20px; border: 1px solid lightblue;float: left; margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+        <div id="box1" onclick="disp()"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        
+        <div id="box4"></div>
+        <div id="box5"></div>
+        <div id="box6"></div>
+        <br>
+        <br>
+        <br>
+        <div id="res1"></div>
+        <div id="res2"></div>
+    <input type="checkbox" name="" id="1">
+    
+    <input type="checkbox" name="" id="2">
+    
+    <input type="checkbox" name="" id="3">
+   
+    <br>
+    <input type="checkbox" name="" id="1">
+    <input type="checkbox" name="" id="2">
+    <input type="checkbox" name="" id="3">
+    <br>
+    <script>
+        var count = 0;
+        var seat = [];
+        document.getElementById("box1").addEventListener("click",function(){
+            
+            if(document.getElementById("box1").style.background == ''){
+                document.getElementById("box1").style.background = "orange";
+                count++;
+                document.getElementById("res1").innerHTML = count;
+                seat.push(1);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+            else{
+                document.getElementById("box1").style.background = '';
+                count--;
+                document.getElementById("res1").innerHTML = count;
+                seat.sort().splice(0,1);
+                document.getElementById("res2").innerHTML = seat.sort();
+
+            }
+           
+        })
+       
+        document.getElementById("box2").addEventListener("click",function(){
+            if(document.getElementById("box2").style.background == ''){
+                document.getElementById("box2").style.background = "orange";
+                count++;
+                document.getElementById("res1").innerHTML = count;
+                seat.push(2);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+            else{
+                document.getElementById("box2").style.background = '';
+                count--;
+                document.getElementById("res1").innerHTML = count;
+                seat.sort().splice(1,1);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+        })
+       
+        document.getElementById("box3").addEventListener("click",function(){
+            if(document.getElementById("box3").style.background == ''){
+                document.getElementById("box3").style.background = "orange";
+                count++;
+                document.getElementById("res1").innerHTML = count;
+                seat.push(3);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+            else{
+                document.getElementById("box3").style.background = '';
+                count--;
+                document.getElementById("res1").innerHTML = count;
+                seat.sort().splice(2,1);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+        })
+       
+        document.getElementById("box4").addEventListener("click",function(){
+            if(document.getElementById("box4").style.background == ''){
+                document.getElementById("box4").style.background = "orange";
+                count++;
+                document.getElementById("res1").innerHTML = count;
+                seat.push(4);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+            else{
+                document.getElementById("box4").style.background = '';
+                count--;
+                document.getElementById("res1").innerHTML = count;
+                
+                seat.sort().splice(3,1);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+        })
+       
+        document.getElementById("box5").addEventListener("click",function(){
+            if(document.getElementById("box5").style.background == ''){
+                document.getElementById("box5").style.background = "orange";
+                count++;
+                document.getElementById("res1").innerHTML = count;
+                seat.push(5);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+            else{
+                document.getElementById("box5").style.background = '';
+                count--;
+                document.getElementById("res1").innerHTML = count;
+                seat.sort().splice(4,1);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+        })
+       
+        document.getElementById("box6").addEventListener("click",function(){
+            if(document.getElementById("box6").style.background == ''){
+                document.getElementById("box6").style.background = "orange";
+                count++;
+                document.getElementById("res1").innerHTML = count;
+                seat.push(6);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+
+            else{
+                document.getElementById("box6").style.background = '';
+                count--;
+                document.getElementById("res1").innerHTML = count;
+                seat.sort().splice(5,1);
+                document.getElementById("res2").innerHTML = seat.sort();
+            }
+        })
+       
+
+    </script>
+</body>
+</html>
