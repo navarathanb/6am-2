@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        This is div tag
+        <h2>This is h2 tag in div tag</h2>
+    </div>
+    <input type="submit" value="value" id="btn4">
+    <input type="text">
+    <input type="submit" value="text" id="btn1">
+    <input type="submit" value="html" id="btn2">
+    <input type="submit" value="value" id="btn3">
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+            $("#box").text("THis is new text") ;  
+            })
+            $("#btn2").click(function(){
+             $("#box").html("<h2>new html text</h2>") ;  
+            })
+            $("#btn3").click(function(){
+             $("input[type='text']").val("Rahan") ;  
+            })
+        })
+        
+    </script>
+</body>
+</html>
