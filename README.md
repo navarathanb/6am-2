@@ -38,3 +38,6 @@ https://global.gotomeeting.com/play/recording/ce0f939b55aec84d7715d5295449b571db
 javascript - 12
 https://global.gotomeeting.com/play/recording/e82b677bb44edf46b6aeeda3b5217a0171359645f980620be14d7c888acc27ab
 
+javascript - jquery - 1
+https://global.gotomeeting.com/play/recording/34d388c3a26ea02ee8827a6326f7a37acbe6625075189b6535b38b62fa29d596
+
