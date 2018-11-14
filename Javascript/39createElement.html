@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+   Tag: <input type="text" id="name">
+    Text: <input type="text" id="txt">
+    <input type="submit" value="submit" id="btn">
+    <br>
+    <div id="res"></div>
+    <script>
+        // document.getElementById("btn").addEventListener("click",disp);
+
+        // function disp(){
+
+        // }
+
+        document.getElementById("btn").addEventListener("click",function(){
+            var tag = document.getElementById("name").value;
+            var txt = document.getElementById("txt").value;
+            var tagC = document.createElement(tag);//<h2> </h2>
+            var txtC = document.createTextNode(txt); 
+            tagC.appendChild(txtC);//<h2>Welcome</h2>
+            document.getElementById("res").appendChild(tagC);
+
+        });
+    </script>
+</body>
+</html>
