@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        .box {
+            width: 300px; height: auto; border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+
+        This is div tag
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var i = 1,j=1;
+            $(".box").click(function(){
+                
+                $(".box").append("<li>Welcome -"+i+"</li>");
+                $(".box").prepend("<li>Welcome -"+j+"</li>");
+                i++;j++;
+               
+            })
+
+
+        })
+    </script>
+     
+</body>
+</html>

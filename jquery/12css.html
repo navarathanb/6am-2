@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+       
+        .box li{
+            border: 2px solid green; margin: 4px;padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/1.jpg" alt="">
+   <ul class="box">
+       <li>box - 1</li>
+       <li>box - 2</li>
+       <li>box - 3</li>
+       <li>box - 4</li>
+       <li>box - 5</li>
+   </ul>
+   
+    <script>
+       $(document).ready(function(){
+           $(".box").css({width: '300px', height: 'auto', border: '2px solid green'})
+            $(".box").click(function(){
+                $("img").appendTo(".box");
+                // $("img").css("width","100px");
+                // $("img").css({"width":"100px","height":"100px","border-radius":"20px","border":"2px solid red"});
+                $("img").css({width:"100px",height:"100px",borderRadius:"20px",border:"2px solid red"});
+            })
+       })
+    </script>
+</body>
+</html>

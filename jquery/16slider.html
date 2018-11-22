@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px; padding: 0px;
+        }
+        .slider {
+            width: 1000px; height: 400px;background: gray; margin:0px auto;
+            position: relative;
+             overflow: hidden;
+        }
+        .prev,.next {
+            text-decoration: none; padding: 10px; background: rgb(30, 30, 182); color: white; 
+            position: absolute; top: 45%; 
+            z-index: 1000;
+        }
+        .next {
+            right: 0px;
+        }
+        .slider ul {
+            list-style: none; position: relative;
+        }
+        .slider ul li {
+            width: 1000px; height: 400px;float: left;
+        }
+
+        .slider ul li img {
+            width: 1000px; height: 400px;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="slider">
+        <a href="#" class="prev"><</a>
+        <a href="#" class="next">></a>
+        <ul>
+            <li><img src="img/s1.jpg" alt=""></li>
+            <li><img src="img/s2.jpg" alt=""></li>
+            <li><img src="img/s3.jpg" alt=""></li>
+            <li><img src="img/s4.jpg" alt=""></li>
+            <li><img src="img/s5.jpg" alt=""></li>
+            <li><img src="img/s6.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script src="slider.js">
+       
+    </script>
+</body>
+</html>

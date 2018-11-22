@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    
+</head>
+<body>
+
+    <script>
+        $(document).ready(function(){
+            $(document).mousemove(function(event){
+                var div = document.createElement("div");//<div></div>
+                $(div).appendTo("body");
+                var rand1 = Math.random().toString().slice(2,5);
+                var rand2 = Math.random().toString().slice(2,5);
+                var rand3 = Math.random().toString().slice(2,4);
+                var rand4 = Math.random().toString().slice(2,4);
+                var rand5 = Math.random().toString().slice(2,4);
+                // '0.323423324324' = 323
+                $(div).addClass("box2");//<div class='box2'></div>
+                var ind = $(".box2").length;
+                $(div).animate({left:event.pageX,top:event.pageY},10);
+                $(div).css({background:'rgb('+rand3+','+rand4+','+rand5+')',position:'absolute',zIndix:ind});
+                $(div).animate({width:'100px',height:'100px',left: rand1,top:rand2,borderRadius:'100px'},2000)
+                
+                $(div).animate({width:'10px',height:'10px', borderRadius:'10px'},2000);
+                $(div).animate({width:'50px',height:'50px', borderRadius:'50px'},2000);
+                $(div).animate({width:'100px',height:'100px', borderRadius:'100px',left:rand2, top:rand1})
+                $(div).animate({top:'0px',left:'0px',width:'0px',height:'0px'},1500);
+                setTimeout(function(){
+                    $(div).remove();
+                },7500)
+            })
+        })
+    </script>
+</body>
+</html>
