@@ -56,3 +56,6 @@ https://global.gotomeeting.com/play/recording/d73ac5209dcc71545cdf34aa3af2f781a0
 jquery - 6
 https://global.gotomeeting.com/play/recording/063f5899b70ef03005dccb8e71eba741a78c6547513c333386a5c8eb83d63a3b
 
+wordpress - 1
+https://global.gotomeeting.com/play/recording/9ef18512b114601fb9c2e279acee59b5916b44a2e4e8e703fa5bd359787a940a
+
