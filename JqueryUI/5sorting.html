@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+  <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <style>
+      
+      ul {
+          list-style: none;
+      }
+      ul li {
+          width: 400px; height: 35px; line-height: 35px; border: 2px solid lightgray;margin-bottom: 2px;
+          text-align: center;
+      }
+      .select .ui-selecting {
+          background: lightcoral;
+      }
+      .select .ui-selected {
+          background: red;
+      }
+      .box,.selected {
+          width: 450px; height: auto; border: 2px solid lightgrey; float: left; margin:10px;
+          padding: 10px;
+      }
+  </style>
+  <script>
+      $(document).ready(function(){
+          $(".select").selectable({
+              selected: function(event,ui){
+                 var data = ui.selected;
+                 $(".selected ul").append(data);
+              }
+          });
+          $(".selected ul").sortable();
+      })
+  </script>
+</head>
+<body>
+    <div class="box">
+        <ul class="select">
+            <li>home</li>
+            <li>Abutuso</li>
+            <li>Services</li>
+            <li>Career</li>
+            <li>Profile</li>
+            <li>Contacus</li>
+        </ul>
+    </div>
+    <div class="selected">
+        <ul>
+
+        </ul>
+    </div>
+</body>
+</html>

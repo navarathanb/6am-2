@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+  <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <style>
+      #box {
+          width: 150px; height: 150px; border: 3px solid gray; float: left; margin-right: 20px;
+      }
+      .drop {
+          width: 300px; height: 250px; border: 2px solid green; float: left;
+      }
+  </style>
+  <script>
+      $(document).ready(function(){
+          $("#box").draggable();
+          $(".drop").droppable({
+            activate: function(event, ui){
+                  $(this).css({background:"red"});
+                  ui.draggable.hide(2000,function(){
+                      $(".drop").html("<h2>Welcome to my site</h2>")
+                  })
+              },
+              create: function( event, ui ) { },
+              classes: {
+                    "ui-droppable": "test"
+                }
+          });
+      })
+  </script>
+</head>
+<body>
+    <div id="box" ></div>
+    <div class="drop"></div>
+</body>
+</html>

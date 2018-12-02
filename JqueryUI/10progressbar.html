@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+  <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <style>
+      
+      /* ul {
+          list-style: none;
+      }
+      ul li {
+          width: 400px; height: 35px; line-height: 35px; border: 2px solid lightgray;margin-bottom: 2px;
+          text-align: center;
+      } */
+      .select .ui-selecting {
+          background: lightcoral;
+      }
+      .select .ui-selected {
+          background: red;
+      }
+      .box,.selected {
+          width: 450px; height: 30px; 
+      }
+      .rootclass {
+          width: 500px;
+      }
+      /* #accordion {
+          width: 600px;
+      } */
+      .titlebar {
+          background: orange; color: white;
+      }
+      .dialog {
+          width: 500px !important;
+      }
+
+      .leftdiv {
+          background: orange;
+          text-align: center;line-height: 30px;
+      }
+  </style>
+  <script>
+      $(document).ready(function(){
+        //   var data = 30;
+          $("#inp").change(function(){
+              var data = parseInt($(this).val());
+                $(".box").progressbar({
+                    value: data,
+                    classes: {
+                        "ui-progressbar-value": "leftdiv"
+                    },
+                    change: function( event, ui ) {
+                        $(".leftdiv").html(data);
+                    },
+                    create: function( event, ui ) {
+                        $(".leftdiv").html(data);
+                    }
+
+                });
+          })
+         
+         
+         
+      })
+  </script>
+</head>
+<body>
+    <input type="text" name="" value="" id="inp">
+    <div class="box">
+    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+  <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <style>
+      
+      /* ul {
+          list-style: none;
+      }
+      ul li {
+          width: 400px; height: 35px; line-height: 35px; border: 2px solid lightgray;margin-bottom: 2px;
+          text-align: center;
+      } */
+      .select .ui-selecting {
+          background: lightcoral;
+      }
+      .select .ui-selected {
+          background: red;
+      }
+      .box,.selected {
+          width: 450px; height: auto; border: 2px solid lightgrey; float: left; margin:10px;
+          padding: 10px;
+      }
+      .rootclass {
+          width: 500px;
+      }
+      /* #accordion {
+          width: 600px;
+      } */
+      .titlebar {
+          background: orange; color: white;
+      }
+      .dialog {
+          width: 500px !important;
+      }
+  </style>
+  <script>
+      $(document).ready(function(){
+          $(".box").dialog({
+              classes: {
+                  "ui-dialog-titlebar": "titlebar",
+                  "ui-dialog":"dialog"
+              },
+              close:function(event,ui){
+                  var name = $("#name").val();
+                  alert(name); 
+              },
+              buttons: {
+                "submit": function () {
+                    $(this).dialog("close");
+                }
+                }
+          });
+          
+      })
+  </script>
+</head>
+<body>
+    <div class="box" title="welcome dialog">
+        <input type="text" id="name">
+        <br>
+        <input type="submit" value="submit" id="btn">
+        <h2>Welcome to my site</h2>
+        <p>The basic dialog window is an overlay positioned within the viewport and is protected from page content (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved, resized and closed with the 'x' icon by default.</p>
+    </div>
+    
+</body>
+</html>
