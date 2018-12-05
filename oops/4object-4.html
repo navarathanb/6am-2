@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="res"></h2>
+    <script>
+        function disp(){
+            this.name = "james";
+            this.email = "james@gmail.com";
+            
+        }
+        disp.prototype.getData = function(){
+             return "Name : "+this.name+"<br>Email : "+this.email;   
+            }
+
+        var obj = new disp();
+        document.getElementById("res").innerHTML = obj.getData();
+    </script>
+</body>
+</html>

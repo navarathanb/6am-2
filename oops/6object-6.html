@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var student = {
+            "firstname" : "James",
+            "lastname" : "Patric",
+            "fullname" : function(){
+            return this.firstname + " " + this.lastname;
+            },
+            "fees" : "23$",
+            "subjects" : [{"sub":"Maths","marks":90,"rank":3},{"sub":"Physics","marks":94,"rank":2},{"sub":"Chemistry","marks":88,"rank":4},{"sub":"Telugu","marks":97,"rank":7},{"sub":"English","marks":90,"rank":1},{"sub":"Telugu","marks":80,"rank":5}],
+            "totalmarks" : function(){
+                var total = 0;
+                for(i=0;i<this.subjects.length;i++){
+                    total += this.subjects[i].marks;
+                }
+                return total;
+            }
+        }
+    </script>
+</body>
+</html>
