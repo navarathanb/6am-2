@@ -1,0 +1,26 @@
+<table border="1" cellpadding="10" width="500">
+    <tr>
+        <td>First name</td><td colspan="2">{{student.fname}}</td>
+    </tr>
+    <tr>
+        <td>Last name</td><td colspan="2">{{student.lname}}</td>
+    </tr>
+    <tr>
+        <td>Full name</td><td colspan="2">{{student.fullname()}}</td>
+    </tr>
+    <tr>
+        <td>Fees</td><td colspan="2">{{student.fees}}</td>
+    </tr>
+    <tr>
+        <td>Subject</td><td>Marks</td><td>Rank</td>
+    </tr>
+    <tr ng-repeat="data in student.sub">
+        <td>{{data.name}}</td>
+        <td>{{data.marks}}</td>
+        <td>{{data.rank}}</td>
+        
+    </tr>
+    <tr>
+        <td>TOtal</td><td>{{student.totalmarks()}}</td><td>{{student.avgrank()}}</td>
+    </tr>
+</table>

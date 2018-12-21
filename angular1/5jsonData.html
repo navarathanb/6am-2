@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="ngapp" ng-controller="ctrl">
+        <table border="1" cellpadding="10" width="500">
+            <tr>
+                <td>Name</td><td>Email</td><td>Mobile</td><td>Id</td>
+            </tr>
+            <tr ng-repeat="data in students">
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.mobile}}</td>
+                    <td>{{data.id}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('ngapp',[]); //to define the angularjs app.
+        app.controller('ctrl',function($scope){
+           $scope.students = [{'name':'james','email':'james@gmail.com','mobile':324234324,'id':234},{'name':'vimal','email':'vimal@gmail.com','mobile':43242342,'id':234},{'name':'sures','email':'suresh@gmail.com','mobile':3535435435,'id':453},{'name':'sai','email':'sai@gmail.com','mobile':234234234,'id':354},{'name':'srinu','email':'srinu@gmail.com','mobile':2343242342,'id':435}];
+
+        });
+    </script>
+</body>
+</html>

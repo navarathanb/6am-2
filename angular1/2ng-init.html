@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+  
+</head>
+<body>
+    <div ng-app="" ng-init="name='james';value1=23;value2=45;student={'name':'james','email':'james@gmail.com','mobile':324234324,'id':234}">
+        
+        <div ng-bind="name" ></div>
+        <h4 ng-bind="value1+value2"></h4>
+        <ul>
+            <li ng-bind="student.name"></li>
+            <li ng-bind="student.email"></li>
+            <li ng-bind="student.mobile"></li>
+            <li ng-bind="student.id"></li>
+        </ul>
+    </div>
+</body>
+</html>

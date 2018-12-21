@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+        <div ng-app="ngapp" ng-controller="ctrl">
+            <table border="1" cellpadding="10" width="500">
+                <tr>
+                    <td>First name</td><td colspan="2">{{student.fname}}</td>
+                </tr>
+                <tr>
+                    <td>Last name</td><td colspan="2">{{student.lname}}</td>
+                </tr>
+                <tr>
+                    <td>Full name</td><td colspan="2">{{student.fullname()}}</td>
+                </tr>
+                <tr>
+                    <td>Fees</td><td colspan="2">{{student.fees}}</td>
+                </tr>
+                <tr>
+                    <td>Subject</td><td>Marks</td><td>Rank</td>
+                </tr>
+                <tr ng-repeat="data in student.sub">
+                    <td>{{data.name}}</td>
+                    <td>{{data.marks}}</td>
+                    <td>{{data.rank}}</td>
+                    
+                </tr>
+                <tr>
+                    <td>TOtal</td><td>{{student.totalmarks()}}</td><td>{{student.avgrank()}}</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+             var app = angular.module('ngapp',[]); //to define the angularjs app.
+            app.controller('ctrl',function($scope){
+                $scope.student = {
+                    "fname" : "James",
+                    "lname" : "Patrik",
+                    "fullname" : function(){
+                        return $scope.student.fname + " " + $scope.student.lname;
+                    },
+                    "fees" : "2000$",
+                    "sub" : [{"name" : "Maths", "marks" : 90, "rank" : 5},{"name" : "Physics", "marks" : 80, "rank" : 15},{"name" : "Chemistry", "marks" : 87, "rank" : 3},{"name" : "Telugu", "marks" : 93, "rank" : 2},{"name" : "English", "marks" : 93, "rank" : 7}],
+                    "totalmarks" : function(){
+                        var sub = $scope.student.sub;
+                        var total = 0;
+                        for(i=0;i<sub.length;i++){
+                            total += sub[i].marks;
+                        }
+                        return total;
+                    },
+                    "avgrank" : function(){
+                        var sub = $scope.student.sub;
+                        var total = 0;
+                        for(i=0;i<sub.length;i++){
+                            total += sub[i].rank;
+                        }
+                        return Math.ceil(total/sub.length);
+                    }
+
+                }
+            })
+        </script>
+</body>
+</html>
