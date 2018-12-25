@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="ngapp" ng-controller="ctrl" class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="text" ng-model="search" ng-keyup="disprecords()">
+                <br>
+                <table border="1" cellpadding="10" width="500" class="table table-bordered" >
+                    <tr>
+                            <td><button class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></button></td><td ng-click="ord('name')">Name <span class="caret"></span></td><td ng-click="ord('email')">Email <span class="caret"></span></td><td ng-click="ord('mobile')">Mobile <span class="caret"></span></td><td ng-click="ord('id')">Id <span class="caret"></span></td><td><button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button></td>
+                    </tr>
+                    <tr ng-repeat="data in students | filter: search | orderBy : order | limitTo:5">
+                            <td><button class="btn btn-success" ng-click="edit(data.id)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                            <td>{{data.name | capital}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.mobile | telcode}}</td>
+                            <td>{{data.id | currency:'Rs'}}</td>
+                            <td><button class="btn btn-danger" ng-click="del(data.id)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Id</label>
+                    <input type="text" ng-disabled="iddis" class="form-control" id="" ng-model="id" placeholder="Input field">
+                </div>
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" id="" ng-model="name" placeholder="Input field">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" id="" ng-model="email" placeholder="Input field">
+                </div>
+                <div class="form-group">
+                    <label for="">Mobile</label>
+                    <input type="text" class="form-control" id="" ng-model="mobile" placeholder="Input field">
+                </div>
+                <button type="submit" class="btn btn-primary" ng-click="insert()" ng-show="ins">Insert</button>
+                <button type="submit" class="btn btn-primary" ng-click="update()" ng-show="upd">update</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+         var app = angular.module('ngapp',[]); //to define the angularjs app.
+        app.filter('telcode',function(){
+            return function(tel){
+                return '+91 '+tel;
+            }
+        })
+        app.filter('capital',function(){
+            return function(caps){
+                var arr = caps.split("");
+                var res = arr[0].toUpperCase();
+                for(i=1;i<arr.length;i++){
+                    res += arr[i];
+                }
+                return res;
+            }
+        })
+
+
+        app.controller('ctrl',function($scope,$http){
+            $http.get("json_data.txt").success(function(response){
+                $scope.students = response;
+            })
+
+            $scope.ins = true;
+            $scope.upd = false;
+            $scope.iddis = false;
+            $scope.tabledisp = false;
+            //insert records
+            $scope.insert = function(){
+                var id = $scope.students[$scope.students.length-1].id+1;
+                $scope.students.push({"name":$scope.name,"email":$scope.email,"mobile":$scope.mobile,"id":id});
+                $scope.id = '';
+                $scope.name = '';
+                $scope.email = '';
+                $scope.mobile = '';
+            }
+            
+            //delete record 
+            $scope.del = function(id){  
+                // alert(id)
+                for(i=0; i<$scope.students.length;i++){
+                    if($scope.students[i].id == id){
+                        $scope.students.splice(i,1);
+                    }
+                }
+            }
+
+            //edit record
+            $scope.edit = function(id){
+                $scope.id = id;
+                $scope.iddis = true;
+                for(i=0;i<$scope.students.length;i++){
+                    if($scope.students[i].id == id){
+                        $scope.name = $scope.students[i].name;
+                        $scope.email = $scope.students[i].email;
+                        $scope.mobile = $scope.students[i].mobile;
+                    }
+                }
+                $scope.ins = false;
+                $scope.upd = true;
+
+                
+            }
+
+            //update record
+            $scope.update = function(){
+                // alert($scope.id)
+                for(i=0;i<$scope.students.length;i++){
+                    if($scope.students[i].id == $scope.id){
+                        $scope.students.splice(i,1,{"name":$scope.name,"email":$scope.email,"mobile":$scope.mobile, "id":$scope.id});
+                        $scope.iddis = false;
+                        $scope.upd = false;
+                        $scope.ins = true;
+                        $scope.id = '';
+                        $scope.name = '';
+                        $scope.email = '';
+                        $scope.mobile = '';
+
+                    }
+                }
+            }
+
+            $scope.ord = function(val){
+                $scope.order = val
+            }
+
+            $scope.disprecords = function(){
+                if($scope.search.length == 0){
+                    $scope.tabledisp = false;
+                }else{
+                    $scope.tabledisp = true;
+                }
+            }
+        })
+    </script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

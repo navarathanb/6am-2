@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+
+</head>
+<body>
+    <div ng-app="ngapp"  class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+               <div class="list-group">
+                   <a href="#students" class="list-group-item">students</a>
+                   <a href="#form" class="list-group-item">form</a>
+                   <a href="#results" class="list-group-item">results</a>
+               </div>
+            </div>
+            <div class="col-sm-6">
+              <div ng-view></div>
+              <script type="text/ng-template" id="students.html">
+                <h2>Students Details</h2>
+                <h4>{{name}}</h4>
+              </script>
+              <script type="text/ng-template" id="form.html">
+                <h2>Studet Online submit form</h2>
+                <p>{{formdisp}}</p>
+              </script>
+              <script type="text/ng-template" id="results.html">
+                <h2>Employee Records</h2>
+                <p>{{result}}</p>
+              </script>
+            </div>
+    </div>
+    <script>
+         var app = angular.module('ngapp',['ngRoute']); //to define the angularjs app.
+        
+         app.config(['$routeProvider', function($routeProvider){
+             $routeProvider.when('/students', {
+                 templateUrl:'students.html',
+                 controller: 'ctrl1'
+             }).when('/form', {
+                 templateUrl:'form.html',
+                 controller: 'ctrl2'
+             }).when('/results', {
+                 templateUrl:'results.html',
+                 controller: 'ctrl3'
+             }).otherwise({
+                 redirectTo: '/students'
+             })
+         }])
+
+
+        app.controller('ctrl1',function($scope){
+           $scope.name = "Welcome students records";
+           
+        })
+        app.controller('ctrl2',function($scope){
+           $scope.formdisp = "Please enter records";
+        })
+        app.controller('ctrl3',function($scope){
+           $scope.result = "Employees fund records";
+        })
+    </script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
