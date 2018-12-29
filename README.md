@@ -87,3 +87,10 @@ https://global.gotomeeting.com/play/recording/f31e3941347e817c89f69dbf85454e072b
 
 https://global.gotomeeting.com/play/recording/0e645e1664f7b3f6c2e53f00726615a50e047fe1c1e56915827210feb9e22a32
 
+https://global.gotomeeting.com/play/recording/0ee024cdf5628782515d0889c60aba70e8fd1a6c99cfa14e1fa68b2bb31a85b1
+
+https://global.gotomeeting.com/play/recording/1ca0a6af81991405662f6fb971b900251d86dd1ed2202a0717639a6f11f10df9
+
+https://global.gotomeeting.com/play/recording/a62e2bdb96051ea6ada4930c10b0487d4aeff471b73791b8c3078464fcdf5883
+
+
