@@ -1,0 +1,16 @@
+<html>
+    <div id="res"></div>
+    <script>
+        var data1 = {"name":"james","email":"james@gmail.com","id":100};
+        
+        var data2 = {"mobile":324234,"fees":2300};
+
+        var obj = Object.assign(data1,data2);
+        var res = '';
+        for(let val in obj){
+            res += obj[val]+"<br>"; 
+        }
+        document.getElementById("res").innerHTML = res;
+    </script>
+
+</html>

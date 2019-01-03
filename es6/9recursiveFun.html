@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <input type="text" id="inp">
+        <input type="submit" value="sbmit" onclick="recur()">
+        <div id="res"></div>
+        <script>
+            function recur(){
+                var inp = document.getElementById("inp").value;
+                function disp(val){
+                    if(val <= 0){
+                        return 1;
+                    }
+                    else {
+                        return (val * disp(val-1));
+                    }
+                }
+                document.getElementById("res").innerHTML = disp(inp);
+            }    
+            
+            
+        </script>
+
+    </body>
+</html>

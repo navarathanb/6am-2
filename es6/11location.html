@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="" onchange="disp(this.value)">
+        <option>select site</option>
+        <option>google</option>
+        <option>facebook</option>
+        <option>youtube</option>
+    </select>
+    <script>
+        function disp(url){
+            // window.location = "http://www.google.com";
+             window.location.assign("http://www."+url+".com");//back option
+            // window.location.replace("http://www."+url+".com");//no back option
+          
+        }
+       
+    </script>
+</body>
+</html>

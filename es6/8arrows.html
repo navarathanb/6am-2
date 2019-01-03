@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="res"></div>
+    <script>
+        var disp = (val,val2, val3 = 90) => {
+            var val4 = val2;
+            return val*val2*val3*val4;
+        }    
+        document.getElementById("res").innerHTML = disp(2,4);
+    </script>
+    </body>
+</html>

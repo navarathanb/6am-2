@@ -1,0 +1,37 @@
+<script>
+    let map = new Map([
+        ['a','james'],
+        ['b','vimal'],
+        ['c','kishore'],
+        ['d','sresh']
+    ]);
+
+    for(let key of map.keys()){
+        document.write(key);
+    }
+
+    for(let val of map.values()){
+        document.write(val);
+    }
+
+    for(let data of map.entries())
+    {
+        document.write("<br>"+data[0]+" - "+data[1]+"<br>");
+    }
+    for(let [key,val] of map.entries()){
+        document.write("<br>"+key+" - "+val+"<br>");
+    }
+    for(let [key,val] of map){
+        document.write("<br>"+key+" - "+val+"<br>");
+    }
+    //arrow function with map.
+
+    map.forEach((val,key) => {
+        document.write("<br>"+key+" - "+val+"<br>");
+    })
+
+    // spread operator...
+    let arr = [...map.keys()];
+    document.write(arr);
+
+</script>

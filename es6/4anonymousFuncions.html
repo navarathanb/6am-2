@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        var disp = function(val2,val = 30){
+            var val3 = function(){
+                return 50;
+            }
+            return val2*val*val3();
+        }    
+        document.getElementById("res").innerHTML = disp(20);
+    </script>
+</body>
+</html>
