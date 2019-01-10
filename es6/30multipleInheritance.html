@@ -1,0 +1,32 @@
+<script>
+  
+    class parent {
+        constructor(name,mobile){
+        this.name = name;
+        this.email = "james@gmail.com";
+        this.mobile = mobile;
+        }
+       
+        getDisp(){
+           document.write("Name"+this.name+"Mobile: "+this.mobile);
+        }
+    }
+    
+
+    class child extends parent {
+        getRes(){
+            document.write("THis is child class");
+        }
+
+    }
+    class child2 extends child {
+        getchild2(){
+            document.write("THis is child2 class")
+        }
+    }
+
+    var obj = new child2('james',324234);
+    obj.getDisp();
+    obj.getRes();
+    obj.getchild2();
+</script>
