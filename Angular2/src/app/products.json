@@ -1,0 +1,65 @@
+[
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1000,
+        "pcost":"32$",
+        "review" : 3,
+        "image" : "app/img/1.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1002,
+        "pcost":"42$",
+        "review" : 2,
+        "image" : "app/img/2.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1003,
+        "pcost":"31$",
+        "review" : 3,
+        "image" : "app/img/3.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1004,
+        "pcost":"42$",
+        "review" : 4,
+        "image" : "app/img/4.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1005,
+        "pcost":"12$",
+        "review" : 1,
+        "image" : "app/img/5.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1006,
+        "pcost":"30$",
+        "review" : 2,
+        "image" : "app/img/6.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1007,
+        "pcost":"73$",
+        "review" : 5,
+        "image" : "app/img/7.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1008,
+        "pcost":"82$",
+        "review" : 2,
+        "image" : "app/img/8.jpg"
+    },
+    {
+        "pname":"Casual Shirt",
+        "pid" : 1009,
+        "pcost":"22$",
+        "review" : 3,
+        "image" : "app/img/9.jpg"
+    }
+]

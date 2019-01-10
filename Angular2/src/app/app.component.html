@@ -1,0 +1,103 @@
+
+<!-- directives : *ngIf, *ngFor -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+                <div *ngIf = "show == true">
+                        <h2>Welcome User</h2>
+                        <p class="desc">User Name: {{name}}</p>
+                        <p>Email : {{email}}</p>
+                    </div>  
+                    <table width="500" class="table table-bordered">
+                        <tr><td>Id</td><td>Name</td><td>Email</td><td>Mobile</td><td>UpperCase</td></tr>
+                        <tr *ngFor = "let data of students">
+                            <td>{{data.id}}</td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.mobile}}</td>
+                            <td>{{getNameInCaps(data.name)}}</td> <!-- Function calling-->
+                        </tr>
+                    </table>
+                    <!-- <img src="{{imagePath}}" alt="">
+                    <img [src]= "imagePath" alt=""> -->
+                    
+        </div>
+    </div>
+    
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-sm-offset-7">
+            <button class="btn btn-primary pull-right" data-toggle="collapse" data-target="#cart">Cart - <span class="badge"> {{cartProducts.length}} </span> <span class="caret"></span></button>
+            <div class="collapse" id="cart">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>PName</td><td>Pcost</td><td>image</td><td><button class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr *ngFor="let cart of cartProducts">
+                        <td>{{cart.pname}}</td>
+                        <td>{{cart.pcost}}</td>
+                        <td>
+                            <img [src] = "cart.image" class="img-responsive cartImg" alt="">
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click) = "del(cart.ind)">X</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" *ngFor = "let product of products">
+            <div class="thumbnail">
+                <img [src] = "product.image" alt="">
+                <div class="caption">
+                    <h3 class="text-center text-success">{{product.pname}}</h3>
+                    <h4 class="">
+                        <span class="text-danger">{{product.pcost}}</span>
+                        <span class="pull-right" *ngIf="product.review == 1">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span>
+                        
+                        <span class="pull-right" *ngIf="product.review == 2">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span>
+                        <span class="pull-right" *ngIf="product.review == 3">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span>
+                        <span class="pull-right" *ngIf="product.review == 4">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span>
+                        <span class="pull-right" *ngIf="product.review == 5">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </span>
+
+                    </h4>
+                    <button class="btn btn-primary" (click) = 'cart(product.pname, product.pid, product.pcost, product.image)'>Add to cart</button>
+                    <button class="btn btn-danger pull-right">Read more..</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
