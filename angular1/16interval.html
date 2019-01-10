@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+  
+</head>
+<body>
+    <div ng-app="app" ng-controller="ctrl">
+       <img src="{{path}}" alt="" style="width: 1000px; height: 400px; margin: 0px auto; display: block;">
+    </div>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller('ctrl',function($scope, $interval){
+            var arr = ["img/s1.jpg","img/s2.jpg","img/s3.jpg","img/s4.jpg","img/s5.jpg","img/s6.jpg"];
+            var i=0;
+            $interval(function(){
+                $scope.path = arr[i];
+                i++;
+                if(i >= arr.length){
+                    i=0;
+                }
+            },1500)
+        })
+    </script>
+</body>
+</html>

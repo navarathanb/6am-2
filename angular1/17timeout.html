@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div ng-app="ngapp" ng-controller="ctrl">
+        <table border="1" cellpadding="10" width="500">
+            <tr>
+                <td>Name</td><td>Email</td><td>Mobile</td><td>Id</td>
+            </tr>
+            <tr ng-repeat="data in students">
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.mobile}}</td>
+                    <td>{{data.id}}</td>
+            </tr>
+        </table>
+    </div>
+   
+    <script>
+        var app = angular.module('ngapp',[]); //to define the angularjs app.
+        app.controller('ctrl',function($scope, $timeout, $http){
+
+           $scope.students = [{'name':'james','email':'james@gmail.com','mobile':324234324,'id':234},{'name':'vimal','email':'vimal@gmail.com','mobile':43242342,'id':234}];
+
+            $timeout(function(){
+                $http.get("json_data.txt").success(function(response){
+                $scope.students = response;
+                })
+            },2000);
+        });
+    </script>
+</body>
+</html>

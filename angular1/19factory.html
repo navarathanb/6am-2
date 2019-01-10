@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div ng-app="ngapp" ng-controller="ctrl">
+       
+       <h2>{{date}}</h2>
+       
+    </div>
+   
+    <script>
+        var app = angular.module('ngapp',[]); //to define the angularjs app.
+
+        app.factory('TimeConvert', function(){
+            var factory = {};
+                factory.timeDisp = function(h){
+                    var result;
+                    if(h > 12){
+                        result = h-12;
+                        result += ' PM';
+                    }
+                    else {
+                        result = h+' AM';
+                    }
+                    return result;
+                }
+                return factory;
+        })
+
+        app.service('DispServ',function(TimeConvert){
+           this.dateDisp = function(){
+                date = new Date();
+               return TimeConvert.timeDisp(date.getHours());
+           }
+        })
+
+        app.controller('ctrl',function($scope, DispServ ){
+           
+           $scope.date = DispServ.dateDisp();
+          
+        });
+    </script>
+</body>
+</html>

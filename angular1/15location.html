@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+  
+</head>
+<body>
+    <div ng-app="app" ng-controller="ctrl">
+        <h2>{{url}}</h2>
+        <h2>{{port}}</h2>
+        <h2>{{proto}}</h2>
+    </div>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller('ctrl',function($scope, $location){
+            $scope.url = $location.absUrl();
+            $scope.port = $location.port();
+            $scope.proto = $location.protocol();
+        })
+    </script>
+</body>
+</html>

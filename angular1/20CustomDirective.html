@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div ng-app="ngapp" ng-controller="ctrl">
+        <emp name="Rajesh" ></emp>
+        <emp name="Vimal"></emp>
+        <emp name="Kishore"></emp>
+        <emp name="Suresh"></emp>
+        <emp name="ram"></emp>
+       
+    </div>
+   
+    <script>
+        var app = angular.module('ngapp',[]); //to define the angularjs app.
+        app.directive('emp', function(){
+            var directive = {};
+            directive.restrict = 'E'; //A or C
+
+            // to creae emp element template
+            directive.template = "Name : {{emp.name}}, Email: {{emp.email}}, Mobile: {{emp.mobile}}, Id: {{emp.id}}";
+
+            // scope is to differentaite every emp tag based on name propertry
+            directive.scope = {
+                emp: "=name"
+            }
+
+            directive.compile = function(element,attribute) {
+                element.css({"background":"orange", "height":"40px"});
+                var linkFunction = function($scope,element,attribute){
+                    element.html("Name : "+$scope.emp.name+", Email: "+$scope.emp.email+", Mobile: "+$scope.emp.mobile+"Id: "+$scope.emp.id);
+                     element.css({"display":"block","margin-bottom":"5px","line-height":"40px","text-align":"center","color":"white"})
+
+                }
+                return linkFunction;
+            }
+            return directive;
+        })
+
+        app.controller('ctrl',function($scope){
+            $scope.Rajesh = {name:"rajesh",email:"rajesh@gmail.com",mobile:234324324,id:1001};
+            $scope.Vimal = {name:"suresh",email:"suresh@gmail.com",mobile:34234234234,id:1003};
+            $scope.Kishore = {name:"kishore",email:"kishire@gmail.com",mobile:234543543,id:1005};
+            $scope.ram = {name:"kishore",email:"kishire@gmail.com",mobile:234543543,id:1005};
+            $scope.Suresh = {};
+            $scope.Suresh.name = "suresh";
+            $scope.Suresh.email = "suresh@gmail.com";
+            $scope.Suresh.mobile = 324235345;
+            $scope.Suresh.id = 1009;
+
+          
+          
+        });
+    </script>
+</body>
+</html>

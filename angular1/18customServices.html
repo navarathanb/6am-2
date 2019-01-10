@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div ng-app="ngapp" ng-controller="ctrl">
+        <input type="text" ng-model="value" ng-keyup = "disp()">
+       <h2>{{val}}</h2>
+       <h2>{{}}</h2>
+    </div>
+   
+    <script>
+        var app = angular.module('ngapp',[]); //to define the angularjs app.
+
+        app.service('dispServ',function(){
+            this.dispRecord = function(val){
+                return val*100;
+            }
+            this.getupdate = function(students, id){
+               
+            }
+        })
+
+        app.controller('ctrl',function($scope, dispServ ){
+            $scope.disp = function(){
+                $scope.val = dispServ.dispRecord($scope.value);
+            }
+            
+          
+        });
+    </script>
+</body>
+</html>
